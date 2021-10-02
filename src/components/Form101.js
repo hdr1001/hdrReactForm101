@@ -4,11 +4,25 @@ export default class Form101 extends React.Component {
    constructor(props) {
       super(props);
 
+      this.state = { ...props.iniState};
+
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleChange = this.handleChange.bind(this);
    }
   
    handleSubmit(event) {
-      alert('Submit clicked 🙂');
+      alert('txtName ' + this.state.txtName + ' 🙂');
+
+      event.preventDefault();
+   }
+
+   handleChange(event) {
+      const name = event.target.name;
+
+      this.setState({
+         [name]: event.target.value
+       });
+
       event.preventDefault();
    }
 
@@ -17,9 +31,20 @@ export default class Form101 extends React.Component {
          <form
             onSubmit={this.handleSubmit}
          >
+            <fieldset>
+               <legend>Form elements example</legend>
 
-            <input type='submit' value='Submit' />
-      
+               <label htmlFor="txtName">Name</label>
+               <input
+                  type="text"
+                  name="txtName"
+                  value={this.state.txtName}
+                  onChange={this.handleChange}
+               />
+
+               <input type='submit' value='Submit' />
+
+            </fieldset>
          </form>
       )
    }

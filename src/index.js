@@ -3,4 +3,8 @@ import ReactDOM from 'react-dom';
 
 import Form101 from './components/Form101';
 
-ReactDOM.render(<Form101 />, document.getElementById('root'));
+const iniStateForm = {
+   txtName: "James Bond"
+}
+
+ReactDOM.render(<Form101 iniState={iniStateForm} />, document.getElementById('root'));
