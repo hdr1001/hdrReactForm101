@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import Form101 from './components/Form101';
+
+ReactDOM.render(<Form101 />, document.getElementById('root'));
