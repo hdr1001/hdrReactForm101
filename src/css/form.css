@@ -1,0 +1,58 @@
+form {
+   width: 360px;
+
+   margin: 20px 30px 24px;
+
+   font-size: 100%;
+}
+
+form fieldset {
+   color: #eee;
+   background-color: #15172b;
+
+   border: none;
+   border-radius: 20px;
+}
+
+form fieldset h2 {
+   margin: 10px 0 15px;
+
+   text-align: center;
+}
+
+form fieldset label {
+   width: 120px;
+
+   margin-right: 4px;
+
+   display: inline-block;
+
+   vertical-align: middle;
+
+   text-align: right;
+
+   font-weight: bold;
+}
+
+form fieldset input {
+   width: 170px;
+
+   padding: 4px 8px;
+   margin: 4px 3px 4px 0;
+
+   color: #eee;
+   background-color: #303245;
+
+   border: 0;
+   border-radius: 12px;
+
+   display: inline-block;
+
+   vertical-align: middle;
+}
+
+form fieldset input[type=submit] {
+   width: 80px;
+
+   background-color:  #08d;
+}

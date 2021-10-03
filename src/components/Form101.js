@@ -33,7 +33,7 @@ export default class Form101 extends React.Component {
             onSubmit={this.handleSubmit}
          >
             <fieldset>
-               <legend>Form elements example</legend>
+               <h2>Form elements example</h2>
 
                <TextInput label='Name' name='txtName'
                   value={this.state.txtName}
