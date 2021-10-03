@@ -5,10 +5,12 @@ export default function TextInput(props) {
       <>
          <label htmlFor={props.name}>{props.label}</label>
          <input
-            type={props.type}
+            type={props.hasOwnProperty('type') ? props.type : 'text'}
             name={props.name}
             value={props.value}
-            onChange={props.onChange}
+            onChange={props.onChange ? props.onChange : null}
+            readOnly={props.hasOwnProperty('readOnly')}
+            maxLength={props.hasOwnProperty('maxLength') ? props.maxLength : false}
          />
       </>
    )

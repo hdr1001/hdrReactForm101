@@ -12,7 +12,7 @@ export default class Form101 extends React.Component {
    }
   
    handleSubmit(event) {
-      alert('txtName ' + this.state.txtName + ' 🙂');
+      alert('Submit ' + JSON.stringify(this.state) + ' 🙂');
 
       event.preventDefault();
    }
@@ -35,11 +35,29 @@ export default class Form101 extends React.Component {
             <fieldset>
                <legend>Form elements example</legend>
 
-               <TextInput
-                  label='Name'
-                  name='txtName'
-                  type='text'
+               <TextInput label='Name' name='txtName'
                   value={this.state.txtName}
+                  onChange={this.handleChange}
+               />
+
+               <TextInput label='Alias' name='txtAlias'
+                  value={this.state.txtAlias}
+                  readOnly
+               />
+
+               <TextInput label='Address' name='txtAdr'
+                  value={this.state.txtAdr}
+                  onChange={this.handleChange}
+                  maxLength={64}
+               />
+
+               <TextInput label='City' name='txtCity'
+                  value={this.state.txtCity}
+                  onChange={this.handleChange}
+               />
+
+               <TextInput type='password' label='Secret code'
+                  name='pwdCode' value={this.state.pwdCode}
                   onChange={this.handleChange}
                />
 
