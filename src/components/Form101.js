@@ -1,10 +1,11 @@
 import React from 'react';
+import TextInput from './TextInput';
 
 export default class Form101 extends React.Component {
    constructor(props) {
       super(props);
 
-      this.state = { ...props.iniState};
+      this.state = { ...props.iniState };
 
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleChange = this.handleChange.bind(this);
@@ -34,10 +35,10 @@ export default class Form101 extends React.Component {
             <fieldset>
                <legend>Form elements example</legend>
 
-               <label htmlFor="txtName">Name</label>
-               <input
-                  type="text"
-                  name="txtName"
+               <TextInput
+                  label='Name'
+                  name='txtName'
+                  type='text'
                   value={this.state.txtName}
                   onChange={this.handleChange}
                />
