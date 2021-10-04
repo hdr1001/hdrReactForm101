@@ -1,5 +1,6 @@
 import React from 'react';
 import TextInput from './TextInput';
+import RadioButtons from './RadioBtns';
 
 export default class Form101 extends React.Component {
    constructor(props) {
@@ -22,12 +23,31 @@ export default class Form101 extends React.Component {
 
       this.setState({
          [name]: event.target.value
-       });
-
-      event.preventDefault();
+      });
    }
 
    render() {
+      const radioButtons = {
+         name: 'optGender',
+         label: 'Gender',
+         defaultValue: this.state.optGender,
+         opts: [
+            {
+               name: 'optMale',
+               value: 'M',
+               label: 'Male'
+            },{
+               name: 'optFemale',
+               value: 'F',
+               label: 'Female'
+            } /* {
+               name: 'optUnknown',
+               value: 'U',
+               label: 'Unknown'
+            } */
+         ]
+      };
+
       return (
          <form
             onSubmit={this.handleSubmit}
@@ -35,36 +55,43 @@ export default class Form101 extends React.Component {
             <fieldset>
                <h2>Form elements example</h2>
 
-               <TextInput label='Name' name='txtName'
-                  value={this.state.txtName}
-                  onChange={this.handleChange}
-               />
+               <div className='elementGrp'>
+                  <TextInput label='Name' name='txtName'
+                     value={this.state.txtName}
+                     onChange={this.handleChange}
+                  />
 
-               <TextInput label='Alias' name='txtAlias'
-                  value={this.state.txtAlias}
-                  readOnly
-               />
+                  <TextInput label='Alias' name='txtAlias'
+                     value={this.state.txtAlias}
+                     readOnly
+                  />
 
-               <TextInput label='Address' name='txtAdr'
-                  value={this.state.txtAdr}
-                  onChange={this.handleChange}
-                  maxLength={64}
-               />
+                  <TextInput label='Address' name='txtAdr'
+                     value={this.state.txtAdr}
+                     onChange={this.handleChange}
+                     maxLength={64}
+                  />
 
-               <TextInput label='City' name='txtCity'
-                  value={this.state.txtCity}
-                  onChange={this.handleChange}
-               />
+                  <TextInput label='City' name='txtCity'
+                     value={this.state.txtCity}
+                     onChange={this.handleChange}
+                  />
 
-               <TextInput type='password' label='Secret code'
-                  name='pwdCode' value={this.state.pwdCode}
-                  onChange={this.handleChange}
-               />
+                  <TextInput type='password' label='Secret code'
+                     name='pwdCode' value={this.state.pwdCode}
+                     onChange={this.handleChange}
+                  />
+               </div>
 
-               <input type='submit' value='Submit' />
+               <div className='elementGrp'>
+                  <RadioButtons radioButtons={radioButtons} onChange={this.handleChange} />
+               </div>
 
+               <div className='elementGrp'>
+                  <input type='submit' value='Submit' />
+               </div>
             </fieldset>
          </form>
-      )
+      );
    }
 }

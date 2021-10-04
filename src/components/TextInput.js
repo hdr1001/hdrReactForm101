@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 export default function TextInput(props) {
    return (
@@ -10,7 +10,7 @@ export default function TextInput(props) {
             value={props.value}
             onChange={props.onChange ? props.onChange : null}
             readOnly={props.hasOwnProperty('readOnly')}
-            maxLength={props.hasOwnProperty('maxLength') ? props.maxLength : false}
+            maxLength={props.hasOwnProperty('maxLength') ? props.maxLength : null}
          />
       </>
    )

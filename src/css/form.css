@@ -14,6 +14,10 @@ form fieldset {
    border-radius: 20px;
 }
 
+.elementGrp {
+   margin: 16px 0 8px;
+}
+
 form fieldset h2 {
    margin: 10px 0 15px;
 
@@ -55,4 +59,16 @@ form fieldset input[type=submit] {
    width: 80px;
 
    background-color:  #08d;
+}
+
+form fieldset input[type=radio] {
+   width: 16px;
+
+   margin-left: 4px;
+}
+
+label.rhs {
+   margin-left: 2px;
+
+   text-align: left;
 }

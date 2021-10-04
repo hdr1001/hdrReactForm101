@@ -10,7 +10,8 @@ const iniStateForm = {
    txtAlias: '007',
    txtAdr: '',
    txtCity: '',
-   pwdCode: ''
+   pwdCode: '',
+   optGender: 'M'
 }
 
 ReactDOM.render(<Form101 iniState={iniStateForm} />, document.getElementById('root'));
