@@ -1,6 +1,7 @@
 import React from 'react';
 import TextInput from './TextInput';
 import RadioButtons from './RadioBtns';
+import CheckBoxes from './CheckBoxes';
 
 export default class Form101 extends React.Component {
    constructor(props) {
@@ -21,11 +22,18 @@ export default class Form101 extends React.Component {
    handleChange(event) {
       const name = event.target.name;
 
-      this.setState({
-         [name]: event.target.value
-      });
+      if (event.target.type === 'checkbox') {
+         this.setState((prevState, props) => 
+            ({ [name]: event.target.checked })
+         )
+      }
+      else {
+         this.setState((prevState, props) =>
+            ({ [name]: event.target.value })
+         )
+      }
    }
-
+   
    render() {
       const radioButtons = {
          name: 'optGender',
@@ -40,11 +48,30 @@ export default class Form101 extends React.Component {
                name: 'optFemale',
                value: 'F',
                label: 'Female'
-            } /* {
+            } /* ,{
                name: 'optUnknown',
                value: 'U',
                label: 'Unknown'
             } */
+         ]
+      };
+
+      const checkBoxes = {
+         label: 'Options',
+         opts: [
+            {
+               name: 'chkWater',
+               checked: this.state.chkWater,
+               label: 'Water'
+            },{
+               name: 'chkIce',
+               checked: this.state.chkIce,
+               label: 'Ice'
+            },{
+               name: 'chkShaken',
+               checked: this.state.chkShaken,
+               label: 'Shaken'
+            }
          ]
       };
 
@@ -85,6 +112,10 @@ export default class Form101 extends React.Component {
 
                <div className='elementGrp'>
                   <RadioButtons radioButtons={radioButtons} onChange={this.handleChange} />
+               </div>
+
+               <div className='elementGrp'>
+                  <CheckBoxes checkBoxes={checkBoxes} onChange={this.handleChange} />
                </div>
 
                <div className='elementGrp'>
