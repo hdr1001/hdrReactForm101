@@ -38,27 +38,29 @@ form fieldset label {
    font-weight: bold;
 }
 
-form fieldset input {
-   width: 170px;
+form fieldset input,
+   form fieldset select {
 
-   padding: 4px 8px;
-   margin: 4px 3px 4px 0;
+      width: 170px;
 
-   color: #eee;
-   background-color: #303245;
+      padding: 4px 8px;
+      margin: 4px 3px 4px 0;
 
-   border: 0;
-   border-radius: 12px;
+      color: #eee;
+      background-color: #303245;
 
-   display: inline-block;
+      border: 0;
+      border-radius: 12px;
 
-   vertical-align: middle;
+      display: inline-block;
+
+      vertical-align: middle;
 }
 
 form fieldset input[type=submit] {
    width: 80px;
 
-   background-color:  #08d;
+   background-color: #08d;
 }
 
 form fieldset input[type=radio], 

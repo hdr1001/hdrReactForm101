@@ -14,7 +14,8 @@ const iniStateForm = {
    optGender: 'M',
    chkWater: false,
    chkIce: false,
-   chkShaken: true
+   chkShaken: true,
+   ddMenuChoice: 's'
 }
 
 ReactDOM.render(<Form101 iniState={iniStateForm} />, document.getElementById('root'));

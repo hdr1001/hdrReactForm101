@@ -2,6 +2,7 @@ import React from 'react';
 import TextInput from './TextInput';
 import RadioButtons from './RadioBtns';
 import CheckBoxes from './CheckBoxes';
+import DropDown from './DropDown';
 
 export default class Form101 extends React.Component {
    constructor(props) {
@@ -75,6 +76,18 @@ export default class Form101 extends React.Component {
          ]
       };
 
+      const dropDown = {
+         label: 'Menu choice',
+         name: 'ddMenuChoice',
+         defaultValue: this.state.ddMenuChoice,
+         opts: [
+            { label: 'A la cart', value: 'a' },
+            { label: 'Special', value: 's' },
+            { label: 'Catch of the day', value: 'c' },
+            { label: 'Vegetarian', value: 'v' }
+         ]
+      };
+
       return (
          <form
             onSubmit={this.handleSubmit}
@@ -119,6 +132,11 @@ export default class Form101 extends React.Component {
                </div>
 
                <div className='elementGrp'>
+                  <DropDown dropDown={dropDown} onChange={this.handleChange} />
+               </div>
+
+               <div className='elementGrp'>
+                  <label>&nbsp;</label>
                   <input type='submit' value='Submit' />
                </div>
             </fieldset>

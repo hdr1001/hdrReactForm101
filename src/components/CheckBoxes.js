@@ -6,7 +6,9 @@ export default function CheckBoxes(props) {
          <label>{props.checkBoxes.label}</label>
          {props.checkBoxes.opts.map((chkBox, idx) => 
             <React.Fragment key={chkBox.name}>
-               <input type='checkbox' name={chkBox.name}
+               <input type='checkbox'
+                  name={chkBox.name}
+                  id={chkBox.name}
                   checked={chkBox.checked}
                   onChange={props.onChange}
                />
