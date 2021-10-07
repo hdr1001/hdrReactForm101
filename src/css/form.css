@@ -57,10 +57,11 @@ form fieldset input,
       vertical-align: middle;
 }
 
-form fieldset input[type=submit] {
-   width: 80px;
+form fieldset input[type=submit],
+   form fieldset input[type=reset] {
+      width: 85px;
 
-   background-color: #08d;
+      background-color: #08d;
 }
 
 form fieldset input[type=radio], 

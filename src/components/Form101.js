@@ -11,11 +11,18 @@ export default class Form101 extends React.Component {
       this.state = { ...props.iniState };
 
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleReset = this.handleReset.bind(this);
       this.handleChange = this.handleChange.bind(this);
    }
   
    handleSubmit(event) {
       alert('Submit ' + JSON.stringify(this.state) + ' 🙂');
+
+      event.preventDefault();
+   }
+
+   handleReset(event) {
+      this.setState((prevState, props) => ({ ...props.iniState }));
 
       event.preventDefault();
    }
@@ -91,6 +98,7 @@ export default class Form101 extends React.Component {
       return (
          <form
             onSubmit={this.handleSubmit}
+            onReset={this.handleReset}
          >
             <fieldset>
                <h2>Form elements example</h2>
@@ -138,6 +146,7 @@ export default class Form101 extends React.Component {
                <div className='elementGrp'>
                   <label>&nbsp;</label>
                   <input type='submit' value='Submit' />
+                  <input type='reset' value='Reset' />
                </div>
             </fieldset>
          </form>
